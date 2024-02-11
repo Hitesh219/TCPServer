@@ -131,6 +131,7 @@ void process_connection(int sockfd)
       }
       else if (temp == "END")
       {
+        write(sockfd , "\n", strlen("\n"));
         close(sockfd);
         return;
       }
