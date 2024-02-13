@@ -47,7 +47,7 @@ int main(int argc, char **argv)
   my_addr.sin_port = htons(portno);
   bind(connection_sock, (struct sockaddr *)&my_addr, sizeof(struct sockaddr_in));
   int yes = 1;
-  setsockopt(connection_sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof yes)
+  setsockopt(connection_sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof yes);
   listen(connection_sock, 50);
 
   int client_len = sizeof(client_addr);
