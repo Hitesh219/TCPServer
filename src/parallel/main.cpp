@@ -62,9 +62,10 @@ int main(int argc, char **argv)
   my_addr.sin_addr.s_addr = htonl(INADDR_ANY);
   my_addr.sin_family = AF_INET;
   my_addr.sin_port = htons(portno);
-  bind(connection_sock, (struct sockaddr *)&my_addr, sizeof(struct sockaddr_in));
   int a = 1;
   setsockopt(connection_sock, SOL_SOCKET, SO_REUSEADDR, &a, sizeof (a));
+  bind(connection_sock, (struct sockaddr *)&my_addr, sizeof(struct sockaddr_in));
+
   listen(connection_sock, 50);
 
   int client_len = sizeof(client_addr);
