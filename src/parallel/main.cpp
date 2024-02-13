@@ -21,7 +21,7 @@ using namespace std;
 unordered_map<string, string> KV_data;
 queue<int> connections_queue;
 
-pthread_t process[50];
+pthread_t process[20];
 
 pthread_mutex_t KV;
 pthread_mutex_t q;
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
   pthread_cond_init(&condition, NULL);
 
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 20; i++)
   {
     pthread_create(&process[i], NULL, thread_process, NULL);
   }
