@@ -17,7 +17,7 @@ jobs:
 
 
     - name: Run Serial tests
-      run: ENABLE_LOGGING=1 make test_serial
+      run: make test_serial
 
     - name: Run Parallel tests with single thread
       run: NUM_CLIENTS=1 make test_parallel
@@ -26,4 +26,4 @@ jobs:
       run: NUM_CLIENTS=5 make test_parallel
     
     - name: Run Parallel tests with 100 threads
-      run: ENABLE_LOGGING=1 NUM_CLIENTS=100 make test_parallel
+      run: NUM_CLIENTS=100 make test_parallel
