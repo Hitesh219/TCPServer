@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
   pthread_cond_init(&condition, NULL);
 
-  for (int i = 0; i < 50; i++)
+  for (int i = 0; i < 10; i++)
   {
     pthread_create(&process[i], NULL, thread_process, NULL);
   }
