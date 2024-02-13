@@ -65,7 +65,7 @@ int main(int argc, char **argv)
   bind(connection_sock, (struct sockaddr *)&my_addr, sizeof(struct sockaddr_in));
   int a = 1;
   setsockopt(connection_sock, SOL_SOCKET, SO_REUSEADDR, &a, sizeof (a));
-  listen(connection_sock, 100);
+  listen(connection_sock, 10);
 
   int client_len = sizeof(client_addr);
 
